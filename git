@@ -1,0 +1,18 @@
+1. Criar uma branch, parte do codigo principal e vai mudando o codigo da branch sem mudar o codigo principal. 
+git checkout rash 
+vai pro rash da mudança
+git checkout -b nome_da_branch
+nomedabranch leva funcionalidade
+
+** FAZ AS MUDANÇAS **
+
+2. git add . -p " . (para todos) ou nome do arquivo"
+ 
+** COLOCA AS MUDANÇA STAGING (CARREGANDO AS MUDANÇAS) **
+
+3. git commit -m "(Mensagem)"
+Podemos ter multiplos 2 e 3 no mesmo push
+
+4. git push 
+pegar oque você fez e envia pro repositorio (github), até então somente esta no seu computador
+
