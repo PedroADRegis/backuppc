@@ -1,0 +1,13 @@
+bool demande_SC[2] = {false, false};
+
+entreeSC(){
+    demande_SC[myID()] = true;
+    debut:
+    if (demance_SC[otherID()]) {
+        GOTO debut;
+    }
+}
+
+sortieSC(){
+    demande_SC[myID()] = false;
+}

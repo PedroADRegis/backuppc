@@ -1,0 +1,19 @@
+int dernier;
+bool demande_SC[2] = {false, false};
+
+entreeSC(){
+    demande_SC[myID()] = true;
+    dernier = myID();
+    debut:
+    if (demance_SC[otherID()]) {
+        if (dernier == myID()){
+            GOTO debut;
+        }
+    }
+}
+
+sortieSC(){
+    demande_SC[myID()] = false;
+}
+
+// Peterson (1981)

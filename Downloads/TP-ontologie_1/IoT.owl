@@ -1,0 +1,264 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://lig-membres.imag.fr/portet/IoT#"
+     xml:base="https://lig-membres.imag.fr/portet/IoT"
+     xmlns:IoT="https://lig-membres.imag.fr/portet/IoT#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://lig-membres.imag.fr/portet/IoT"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://lig-membres.imag.fr/portet/IoT#hasComponent -->
+
+    <owl:ObjectProperty rdf:about="https://lig-membres.imag.fr/portet/IoT#hasComponent">
+        <owl:inverseOf rdf:resource="https://lig-membres.imag.fr/portet/IoT#isComponentOf"/>
+        <rdfs:domain rdf:resource="https://lig-membres.imag.fr/portet/IoT#Device"/>
+        <rdfs:range rdf:resource="https://lig-membres.imag.fr/portet/IoT#Component"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://lig-membres.imag.fr/portet/IoT#isComponentOf -->
+
+    <owl:ObjectProperty rdf:about="https://lig-membres.imag.fr/portet/IoT#isComponentOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://lig-membres.imag.fr/portet/IoT#Component"/>
+        <rdfs:range rdf:resource="https://lig-membres.imag.fr/portet/IoT#Device"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://lig-membres.imag.fr/portet/IoT#Actuator -->
+
+    <owl:Class rdf:about="https://lig-membres.imag.fr/portet/IoT#Actuator">
+        <rdfs:subClassOf rdf:resource="https://lig-membres.imag.fr/portet/IoT#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- https://lig-membres.imag.fr/portet/IoT#AirQualityStation -->
+
+    <owl:Class rdf:about="https://lig-membres.imag.fr/portet/IoT#AirQualityStation">
+        <rdfs:subClassOf rdf:resource="https://lig-membres.imag.fr/portet/IoT#Environement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://lig-membres.imag.fr/portet/IoT#BlackBerry -->
+
+    <owl:Class rdf:about="https://lig-membres.imag.fr/portet/IoT#BlackBerry">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://lig-membres.imag.fr/portet/IoT#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="https://lig-membres.imag.fr/portet/IoT#Wifi"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://lig-membres.imag.fr/portet/IoT#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="https://lig-membres.imag.fr/portet/IoT#gsm"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://lig-membres.imag.fr/portet/IoT#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="https://lig-membres.imag.fr/portet/IoT#keyboard"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://lig-membres.imag.fr/portet/IoT#Communication -->
+
+    <owl:Class rdf:about="https://lig-membres.imag.fr/portet/IoT#Communication">
+        <rdfs:subClassOf rdf:resource="https://lig-membres.imag.fr/portet/IoT#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- https://lig-membres.imag.fr/portet/IoT#Component -->
+
+    <owl:Class rdf:about="https://lig-membres.imag.fr/portet/IoT#Component">
+        <owl:disjointWith rdf:resource="https://lig-membres.imag.fr/portet/IoT#Device"/>
+        <owl:disjointWith rdf:resource="https://lig-membres.imag.fr/portet/IoT#Phone"/>
+    </owl:Class>
+    
+
+
+    <!-- https://lig-membres.imag.fr/portet/IoT#Device -->
+
+    <owl:Class rdf:about="https://lig-membres.imag.fr/portet/IoT#Device">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://lig-membres.imag.fr/portet/IoT#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="https://lig-membres.imag.fr/portet/IoT#Component"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://lig-membres.imag.fr/portet/IoT#Environement -->
+
+    <owl:Class rdf:about="https://lig-membres.imag.fr/portet/IoT#Environement">
+        <rdfs:subClassOf rdf:resource="https://lig-membres.imag.fr/portet/IoT#Device"/>
+        <owl:disjointWith rdf:resource="https://lig-membres.imag.fr/portet/IoT#Phone"/>
+    </owl:Class>
+    
+
+
+    <!-- https://lig-membres.imag.fr/portet/IoT#Hygrometer -->
+
+    <owl:Class rdf:about="https://lig-membres.imag.fr/portet/IoT#Hygrometer">
+        <rdfs:subClassOf rdf:resource="https://lig-membres.imag.fr/portet/IoT#Environement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://lig-membres.imag.fr/portet/IoT#IO -->
+
+    <owl:Class rdf:about="https://lig-membres.imag.fr/portet/IoT#IO">
+        <rdfs:subClassOf rdf:resource="https://lig-membres.imag.fr/portet/IoT#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- https://lig-membres.imag.fr/portet/IoT#Microphone -->
+
+    <owl:Class rdf:about="https://lig-membres.imag.fr/portet/IoT#Microphone">
+        <rdfs:subClassOf rdf:resource="https://lig-membres.imag.fr/portet/IoT#Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://lig-membres.imag.fr/portet/IoT#Phone -->
+
+    <owl:Class rdf:about="https://lig-membres.imag.fr/portet/IoT#Phone">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://lig-membres.imag.fr/portet/IoT#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="https://lig-membres.imag.fr/portet/IoT#gsm"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://lig-membres.imag.fr/portet/IoT#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- https://lig-membres.imag.fr/portet/IoT#Sensor -->
+
+    <owl:Class rdf:about="https://lig-membres.imag.fr/portet/IoT#Sensor">
+        <rdfs:subClassOf rdf:resource="https://lig-membres.imag.fr/portet/IoT#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- https://lig-membres.imag.fr/portet/IoT#Smartphone -->
+
+    <owl:Class rdf:about="https://lig-membres.imag.fr/portet/IoT#Smartphone">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://lig-membres.imag.fr/portet/IoT#hasComponent"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="https://lig-membres.imag.fr/portet/IoT#Wifi"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://lig-membres.imag.fr/portet/IoT#hasComponent"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="https://lig-membres.imag.fr/portet/IoT#gsm"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://lig-membres.imag.fr/portet/IoT#Phone"/>
+    </owl:Class>
+    
+
+
+    <!-- https://lig-membres.imag.fr/portet/IoT#Telephone -->
+
+    <owl:Class rdf:about="https://lig-membres.imag.fr/portet/IoT#Telephone">
+        <rdfs:subClassOf rdf:resource="https://lig-membres.imag.fr/portet/IoT#Phone"/>
+    </owl:Class>
+    
+
+
+    <!-- https://lig-membres.imag.fr/portet/IoT#Thermometer -->
+
+    <owl:Class rdf:about="https://lig-membres.imag.fr/portet/IoT#Thermometer">
+        <rdfs:subClassOf rdf:resource="https://lig-membres.imag.fr/portet/IoT#Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://lig-membres.imag.fr/portet/IoT#Wifi -->
+
+    <owl:Class rdf:about="https://lig-membres.imag.fr/portet/IoT#Wifi">
+        <rdfs:subClassOf rdf:resource="https://lig-membres.imag.fr/portet/IoT#Communication"/>
+    </owl:Class>
+    
+
+
+    <!-- https://lig-membres.imag.fr/portet/IoT#gsm -->
+
+    <owl:Class rdf:about="https://lig-membres.imag.fr/portet/IoT#gsm">
+        <rdfs:subClassOf rdf:resource="https://lig-membres.imag.fr/portet/IoT#Communication"/>
+    </owl:Class>
+    
+
+
+    <!-- https://lig-membres.imag.fr/portet/IoT#keyboard -->
+
+    <owl:Class rdf:about="https://lig-membres.imag.fr/portet/IoT#keyboard">
+        <rdfs:subClassOf rdf:resource="https://lig-membres.imag.fr/portet/IoT#IO"/>
+    </owl:Class>
+    
+
+
+    <!-- https://lig-membres.imag.fr/portet/IoT#speaker -->
+
+    <owl:Class rdf:about="https://lig-membres.imag.fr/portet/IoT#speaker">
+        <rdfs:subClassOf rdf:resource="https://lig-membres.imag.fr/portet/IoT#Actuator"/>
+    </owl:Class>
+    
+
+
+    <!-- https://lig-membres.imag.fr/portet/IoT#4G -->
+
+    <owl:Class rdf:about="https://lig-membres.imag.fr/portet/IoT#4G">
+        <rdfs:subClassOf rdf:resource="https://lig-membres.imag.fr/portet/IoT#Communication"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

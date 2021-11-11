@@ -1,0 +1,21 @@
+int tour = random(myID(), otherID());
+bool demande_SC[2] = {false, false};
+
+entreeSC(){
+    debut:
+    demande_SC[myID()] = true;
+    if (demance_SC[otherID()]) {
+        if (tour != myID()){
+            demande_SC[myID()] = false;
+            demande_prise_en_compte:
+            if (tour != myID())
+        }
+        GOTO 
+    }
+}
+
+sortieSC(){
+    demande_SC[myID()] = false;
+}
+
+// Peterson (1981)
